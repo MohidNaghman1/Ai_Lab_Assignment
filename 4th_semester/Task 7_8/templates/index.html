@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Image Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            width: 100px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #0B3D91;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        img {
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+    </style>
+</head>
+<body>
+    <h1>Get a Random Image</h1>
+    <form method="POST">
+        <input type="number" name="width" placeholder="Width" required>
+        <input type="number" name="height" placeholder="Height" required>
+        <button type="submit">Get Image</button>
+    </form>
+
+    {% if image_url %}
+        <img src="{{ image_url }}" alt="Random Image">
+    {% endif %}
+</body>
+</html>
